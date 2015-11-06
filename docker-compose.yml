@@ -1,0 +1,32 @@
+eureka:
+  image: volkodav/eureka
+  container_name: eureka-server
+  ports:
+     - "8010:8010"
+
+rest-ukraine:
+  image: volkodav/spring-cloud-rest
+  ports:
+    - ":8080"
+  links:
+     - eureka:eureka
+  environment:
+    country: Ukraine
+
+rest-russia:
+  image: volkodav/spring-cloud-rest
+  ports:
+    - ":8080"
+  links:
+     - eureka:eureka
+  environment:
+    country: Russia
+
+rest-gateway:
+  image: volkodav/spring-cloud-rest-gateway
+  ports:
+    - "8080:8080"
+  links:
+     - eureka:eureka
+     - rest-russia:rest-russia
+     - rest-ukraine:rest-ukraine
