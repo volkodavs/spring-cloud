@@ -1,4 +1,16 @@
 ---
+spring:
+  profiles: default
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+server:
+  port: 8080
+
+---
+spring:
+  profiles: docker
 eureka:
   client:
     serviceUrl:
