@@ -1,4 +1,4 @@
-package com.sergeyvolkodav.rest;
+package com.sergeyvolkodav;
 
 
 import org.springframework.boot.SpringApplication;

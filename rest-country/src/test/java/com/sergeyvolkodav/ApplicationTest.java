@@ -1,4 +1,4 @@
-package com.sergeyvolkodav.rest;
+package com.sergeyvolkodav;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
